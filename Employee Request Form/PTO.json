@@ -1,0 +1,95 @@
+{
+    "Name": "EmployeeName",
+    "TDate": "TodayDate",
+    "Department": "Department",
+    "numVacation": "numVacation",
+    "AsofDate": "AsOfDate",
+    "numRequested": "numRequested",
+    "SDate": "SDate",
+    "EDate": "EDate",
+    "RDate": "RDate",
+    "Vacation": "Vacation",
+    "Personal": "Personal",
+    "Sick": "Sick",
+    "comment": "comment",
+    "Esignature": "Esignature",
+    "ESDate": "ESDate",
+    "sApproval": "sApproval",
+    "SADate": "SADate",
+    "pName": "pName",
+    "title": "title",
+    "pInput": "pInput",
+    "PDate": "PDate"
+
+}
+
+
+
+{
+    "type": "object",
+    "properties": {
+        "Name": {
+            "type": "string"
+        },
+        "TDate": {
+            "type": "string"
+        },
+        "Department": {
+            "type": "string"
+        },
+        "numVacation": {
+            "type": "string"
+        },
+        "AsofDate": {
+            "type": "string"
+        },
+        "numRequested": {
+            "type": "string"
+        },
+        "SDate": {
+            "type": "string"
+        },
+        "EDate": {
+            "type": "string"
+        },
+        "RDate": {
+            "type": "string"
+        },
+        "Vacation": {
+            "type": "string"
+        },
+        "Personal": {
+            "type": "string"
+        },
+        "Sick": {
+            "type": "string"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "Esignature": {
+            "type": "string"
+        },
+        "ESDate": {
+            "type": "string"
+        },
+        "sApproval": {
+            "type": "string"
+        },
+        "SADate": {
+            "type": "string"
+        },
+        "pName": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "pInput": {
+            "type": "string"
+        },
+        "PDate": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,818 @@
+<!doctype html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="assets/js/dojo.formalize.js">
+  </script>
+  <style>
+    h1 {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      padding: 10px;
+      margin: 0px;
+      width: 100%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    span{
+      font-weight: bold;
+    }
+    .title, .title2{
+      float: left;
+      padding-right: 10px;
+
+    }
+    .submit {
+      text-align: right;
+    }
+    .img {
+      width: auto;
+      height: auto;
+    }
+    .other {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<br />
+<br />
+<br />
+<br />
+
+  <form method="post"  onsubmit ="return false">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <span class="title">Certified:
+          </span>
+          <br />
+          <input type="checkbox" name="cert" id="certCopy" value="Certified Copy" />
+          <label for="certCopy">Certified Copy
+          </label>
+          <br />
+          <input type="checkbox" name="cert" id="certApo" value="Certified Copy for an Apostille Seal" />
+          <label for="certApo">Certified Copy for an Apostille Seal
+          </label>
+          <br />
+          <input type="checkbox" name="cert" id="certi" value="Certified" />
+          <label for="certi">Certified
+          </label>
+        </div>
+        <div class="col-4">
+          <label for="relation"  style="font-weight: bold" >Requestor's Relationship to Person on Record:
+          </label>
+          <input type="text" id="relation" name="relation" />
+        </div>
+        <div class="col">
+          <label for="sign"  style="font-weight: bold" >Requestor's Signature:
+          </label>
+          <input type="text" id="sign" name="sign" />
+        </div>
+        <div class="col">
+          <label for="date" style="font-weight: bold" >Date of Request:
+          </label>
+          <input type="date" id="date" name="date" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <label for="street" style="font-weight: bold" >Name of Requestor
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="fname">First Name:
+          </label>
+          <input type="text" id="fname" name="fname" />
+        </div>
+        <div class="col">
+          <label for="mname">Middle Name:
+          </label>
+          <input type="text" id="mname" name="mname" />
+        </div>
+        <div class="col">
+          <label for="lname">Last Name:
+          </label>
+          <input type="text" id="lname" name="lname" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <label for="street" style="font-weight: bold" >Current mailing Address(
+            <i>must match address on ID
+            </i>):
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="street">Street address:
+          </label>
+          <input type="address" id="street" name="street" />
+        </div>
+        <div class="col">
+          <label for="city">City:
+          </label>
+          <input type="address" id="city" name="city" />
+        </div>
+        <div class="col">
+          <label for="state">State:
+          </label>
+          <input type="address" id="state" name="state" />
+        </div>
+        <div class="col">
+          <label for="postal">Postal Code:
+          </label>
+          <input type="address" id="postal" name="postal" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <label for="street" style="font-weight: bold" >Contact info:
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="email" style="font-weight: bold" >Email:
+          </label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="col">
+          <label for="phone" class="title" style="font-weight: bold" >Phone:
+          </label>
+          <input type="tel" id="phone" required placeholder="Area code" aria-label="Area code" name="phone" />
+        </div>
+        <div class="col">
+          <span class="title">Gender:
+          </span>
+          <input type="radio" name="gender" id="male" value="M" />
+          <label for="male">M
+          </label>
+          <input type="radio" name="gender" id="female" value="F" />
+          <label for="female">F
+          </label>
+        </div>
+        <div class="col">
+          <span class="title">Reason for Request:
+          </span>
+          <br />
+          <input type="checkbox" name="request" id="gen" value="Genealogy" />
+          <label for="gen">Genealogy
+          </label>
+          <br>
+          <input type="checkbox" name="request" id="dual" value="Dual Citizenship" />
+          <label for="dual">Dual Citizenship
+          </label>
+          <br>
+          <input type="checkbox" name="request" id="estate" value="Estate Matters" />
+          <label for="estate">Estate Matters
+          </label>
+          <br>
+          <input type="checkbox" name="request"/>
+          <label for="other">Other:
+          </label>
+          <input  type="other" id="other" name="other" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div style= "font-weight: bold">
+            <input type="checkbox" id="yourBox" value="BIRTH (OVER 80 YEARS AGO)" />
+            <label for="birth">BIRTH (OVER 80 YEARS AGO)
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <label for="copies" class="title">No. Requested Copies:
+          </label>
+          <input type="number" id="copies" name="copies" disabled/>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span> Child Name at Birth:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="cfname" >First Name:
+          </label>
+          <input type="text" id="cfname" name="cfname" disabled />
+        </div>
+        <div class="col-4">
+          <label for="cmname" >Middle Name:
+          </label>
+          <input type="text" id="cmname" name="cmname"disabled />
+        </div>
+        <div class="col-4">
+          <label for="clname" >Last Name:
+          </label>
+          <input type="text" id="clname" name="clname" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Place of Birth
+            <i>(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ccity">City:
+          </label>
+          <input type="text" id="ccity" name="ccity" disabled />
+        </div>
+        <div class="col">
+          <label for="cstate" >State:
+          </label>
+          <input type="text" id="cstate" name="cstate" disabled />
+        </div>
+        <div class="col">
+          <label for="ccounty">County:
+          </label>
+          <input type="text" id="ccounty" name="ccounty" disabled/>
+        </div>
+        <div class="col">
+          <label for="dob">Date of Birth:
+          </label>
+          <input type="text" id="dob" name="dob" disabled/>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title">Name of Child's Parents:
+            <i> (name given at birth or on birth certificate/ Maiden Name)(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Parent A:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pafname" class="title" >First Name:
+          </label>
+          <input type="text" id="pafname" name="pafname" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pamname" class="title" >Middle Name:
+          </label>
+          <input type="text" id="pamname" name="pamname"disabled />
+        </div>
+        <div class="col-4">
+          <label for="palname" class="title" >Last Name:
+          </label>
+          <input type="text" id="palname" name="palname" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Parent B:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pbfname" class="title" >First Name:
+          </label>
+          <input type="text" id="pbfname" name="pbfname" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pbmname" class="title" >Middle Name:
+          </label>
+          <input type="text" id="pbmname" name="pbmname"disabled />
+        </div>
+        <div class="col-4">
+          <label for="pblname" class="title" >Last Name:
+          </label>
+          <input type="text" id="pblname" name="pblname" disabled />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> If Child's name was changed:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="newname" class="title" >New Name:
+          </label>
+          <input type="text" id="newname" name="newname" disabled />
+        </div>
+        <div class="col">
+          <label for="dchanged" class="title" >Describe Change:
+          </label>
+          <input type="text" id="dchanged" name="dchanged" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <input type="checkbox" id="yourBox2" value="DEATH (OVER 40 YEARS AGO)" />
+          <label for="birth">DEATH (OVER 40 YEARS AGO)
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="copies2" class="title">No. Requested Copies:
+          </label>
+          <input type="number" id="copies2" name="copies2" disabled/>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Name of Decedent:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="cfname2" class="title" >First Name:
+          </label>
+          <input type="text" id="cfname2" name="cfname2" disabled />
+        </div>
+        <div class="col-4">
+          <label for="cmname2" class="title" >Middle Name:
+          </label>
+          <input type="text" id="cmname2" name="cmname2"disabled />
+        </div>
+        <div class="col-4">
+          <label for="clname2" class="title" >Last Name:
+          </label>
+          <input type="text" id="clname2" name="clname2" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> place of Death
+            <i>(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ccity2" class="title" >City:
+          </label>
+          <input type="text" id="ccity2" name="ccity2" disabled />
+        </div>
+        <div class="col">
+          <label for="cstate2" class="title" >State:
+          </label>
+          <input type="text" id="cstate2" name="cstate2" disabled />
+        </div>
+        <div class="col">
+          <label for="ccounty2" class="title">County:
+          </label>
+          <input type="text" id="ccounty2" name="ccounty2" disabled/>
+        </div>
+        <div class="col">
+          <label for="dod" class="title">Date of Death:
+          </label>
+          <input type="text" id="dod" name="dod" disabled/>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title">Name of Decendent's Parents:
+            <i> (name given at birth or on birth certificate/ Maiden Name)(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Parent A:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pafname2" class="title" >First Name:
+          </label>
+          <input type="text" id="pafname2" name="pafname2" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pamname2" class="title" >Middle Name:
+          </label>
+          <input type="text" id="pamname2" name="pamname2"disabled />
+        </div>
+        <div class="col-4">
+          <label for="palname2" class="title" >Last Name:
+          </label>
+          <input type="text" id="palname2" name="palname2" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span > Parent B:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pbfname2">First Name:
+          </label>
+          <input type="text" id="pbfname2" name="pbfname2" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pbmname2">Middle Name:
+          </label>
+          <input type="text" id="pbmname2" name="pbmname2" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pblname2" >Last Name:
+          </label>
+          <input type="text" id="pblname2" name="pblname2" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <input type="checkbox" id="yourBox3" value="MARRIAGE (OVER 50 YEARS AGO)" />
+          <label for="birth">MARRIAGE (OVER 50 YEARS AGO)
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="copies3" class="title">No. Requested Copies:
+          </label>
+          <input type="number" id="copies3" name="copies3" disabled/>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Place of Event
+            <i>(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ccity3" class="title" >City:
+          </label>
+          <input type="text" id="ccity3" name="ccity3" disabled />
+        </div>
+        <div class="col">
+          <label for="cstate3" class="title" >State:
+          </label>
+          <input type="text" id="cstate3" name="cstate3" disabled />
+        </div>
+        <div class="col">
+          <label for="ccounty3" class="title">County:
+          </label>
+          <input type="text" id="ccounty3" name="ccounty3" disabled/>
+        </div>
+        <div class="col">
+          <label for="doe" class="title">Date of Event:
+          </label>
+          <input type="text" id="doe" name="doe" disabled/>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class=col>
+          <span class="title">Name of Spouses:
+            <i> (name given at birth or on birth certificate/ Maiden Name)(optional)
+            </i>:
+          </span>
+          <br>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span class="title"> Parent A:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pafname3" class="title" >First Name:
+          </label>
+          <input type="text" id="pafname3" name="pafname3" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pamname3" class="title" >Middle Name:
+          </label>
+          <input type="text" id="pamname3" name="pamname3"disabled />
+        </div>
+        <div class="col-4">
+          <label for="palname3" class="title" >Last Name:
+          </label>
+          <input type="text" id="palname3" name="palname3" disabled />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col" style= "font-weight: bold">
+          <span > Parent B:
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="pbfname3" class="title" >First Name:
+          </label>
+          <input type="text" id="pbfname3" name="pbfname3" disabled />
+        </div>
+        <div class="col-4">
+          <label for="pbmname3" class="title" >Middle Name:
+          </label>
+          <input type="text" id="pbmname3" name="pbmname3"disabled />
+        </div>
+        <div class="col-4">
+          <label for="pblname3" class="title" >Last Name:
+          </label>
+          <input type="text" id="pblname3" name="pblname3" disabled />
+        </div>
+      </div>
+      <br />
+      <div class="submit">
+        <input type="reset" value="Reset">
+        <button > Submit
+        </button>
+      </div>
+      <br />
+      <br />
+    </div>
+  </form>
+ <script>
+    var button = document.getElementsByTagName("button")[0];
+    button.addEventListener("click", function () {
+      var saveData = (function () {
+        var a = document.createElement("a");
+        return function (data, fileName) {
+          var json = JSON.stringify(data),
+              blob = new Blob([json], {
+                type: "octet/stream" }
+                             ),
+              url = window.URL.createObjectURL(blob);
+          a.href = url;
+          a.download = fileName;
+          a.click();
+          window.URL.revokeObjectURL(url);
+        };
+      }
+                      ());
+      var fname = document.getElementById("fname").value;
+      var mname = document.getElementById("mname").value;
+      var lname = document.getElementById("lname").value;
+      var email = document.getElementById("email").value;
+      var sign = document.getElementById("sign").value;
+      var relation = document.getElementById("relation").value;
+      var date = document.getElementById("date").value;
+      var saddress = document.getElementById("street").value;
+      var city = document.getElementById("city").value;
+      var state = document.getElementById("state").value;
+      var postal = document.getElementById("postal").value;
+      var phone = document.getElementById("phone").value;
+      var box = document.getElementById("yourBox").value;
+      var fchild = document.getElementById("cfname").value;
+      var mchild = document.getElementById("cmname").value;
+      var lchild = document.getElementById("clname").value;
+      var cop = document.getElementById("copies").value;
+      var childcity = document.getElementById("ccity").value;
+      var childstate = document.getElementById("cstate").value;
+      var childcounty = document.getElementById("ccounty").value;
+      var childdob = document.getElementById("dob").value;
+      var pafirst = document.getElementById("pafname").value;
+      var pamiddle = document.getElementById("pamname").value;
+      var palast = document.getElementById("palname").value;
+      var pbfirst = document.getElementById("pbfname").value;
+      var pbmiddle = document.getElementById("pbmname").value;
+      var pblast = document.getElementById("pblname").value;
+      var nname = document.getElementById("newname").value;
+      var dc = document.getElementById("dchanged").value;
+      var box2 = document.getElementById("yourBox2").value;
+      var fchild2 = document.getElementById("cfname2").value;
+      var mchild2 = document.getElementById("cmname2").value;
+      var lchild2 = document.getElementById("clname2").value;
+      var cop2 = document.getElementById("copies2").value;
+      var childcity2 = document.getElementById("ccity2").value;
+      var childstate2 = document.getElementById("cstate2").value;
+      var childcounty2 = document.getElementById("ccounty2").value;
+      var childdob2 = document.getElementById("dod").value;
+      var pafirst2 = document.getElementById("pafname2").value;
+      var pamiddle2 = document.getElementById("pamname2").value;
+      var palast2 = document.getElementById("palname2").value;
+      var pbfirst2 = document.getElementById("pbfname2").value;
+      var pbmiddle2 = document.getElementById("pbmname2").value;
+      var pblast2 = document.getElementById("pblname2").value;
+      var box3 = document.getElementById("yourBox3").value;
+      var cop3 = document.getElementById("copies3").value;
+      var childcity3 = document.getElementById("ccity3").value;
+      var childstate3 = document.getElementById("cstate3").value;
+      var childcounty3 = document.getElementById("ccounty3").value;
+      var childdob3 = document.getElementById("doe").value;
+      var pafirst3 = document.getElementById("pafname3").value;
+      var pamiddle3 = document.getElementById("pamname3").value;
+      var palast3 = document.getElementById("palname3").value;
+      var pbfirst3 = document.getElementById("pbfname3").value;
+      var pbmiddle3 = document.getElementById("pbmname3").value;
+      var pblast3 = document.getElementById("pblname3").value;
+      //this will get the radio option for certifed
+      var e = document.getElementsByName('request');
+      var ReqOut = " ";
+      for(i = 0; i < e.length; i++) {
+        if(e[i].checked){
+          if(i == 3 ){
+            ReqOut += "Other: " + document.getElementById('other').value + " ";
+          }
+          if(i == 0 || i == 1 || i == 2){
+            ReqOut += e[i].value + " | ";
+          }
+        }
+      }
+      //this will get the checkedbox option for certifed
+      var c = document.getElementsByName('cert');
+      var CertOut = " ";
+      for(i = 0; i < c.length; i++) {
+        if(c[i].checked){
+          CertOut += c[i].value + " | ";
+        }
+      }
+      //this will get the radio option for gender
+      var ele = document.getElementsByName('gender');
+      for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked){
+          var MF = ele[i].value;
+        }
+      }
+      var data = {
+        "Data": [
+          {
+            "FirstName": fname,
+            "MiddleName": mname,
+            "LastName": lname,
+            "Date": date,
+            "Address": saddress,
+            "City": city,
+            "State": state,
+            "Postal": postal,
+            "PhoneNumber": phone,
+            "ReasonForRequest": ReqOut,
+            "RequestRelationship": relation,
+            "RequesorSignature": sign ,
+            "Email": email,
+            "Gender": MF,
+            "Certified": CertOut,
+            "Box": box,
+            "ChildFirstName": fchild,
+            "ChildMiddleName": mchild,
+            "ChildLastName": lchild,
+            "NoRequestedCopies": cop,
+            "BirthCity": childcity,
+            "BirthState": childstate,
+            "County": childcounty,
+            "DateOfBirth/Years":childdob,
+            "ChildParentAFirstname":pafirst,
+            "ChildParentAMiddle":pamiddle,
+            "ChildParentALast":palast,
+            "ChildParentBFirstname":pbfirst,
+            "ChildParentBMiddle":pbmiddle,
+            "ChildParentBLast":pblast,
+            "ChildParentBMiddle":nname,
+            "ChildParentBLast":dchanged,
+            // Section 2
+            "BoxTwo": box2,
+            "ChildFirstNameTwo": fchild2,
+            "ChildMiddleNameTwo": mchild2,
+            "ChildLastNameTwo": lchild2,
+            "NoRequestedCopiesTwo": cop2,
+            "BirthCityTwo": childcity2,
+            "BirthStateTwo": childstate2,
+            "BirthCountyTwo": childcounty2,
+            "BirthDateBirth/YearsTwo":childdob2,
+            "ChildParentAFirstnameTwo":pafirst2,
+            "ChildParentAMiddleTwo":pamiddle2,
+            "ChildParentALastTwo":palast2,
+            "ChildParentBFirstnameTwo":pbfirst2,
+            "ChildParentBMiddleTwo":pbmiddle2,
+            "ChildParentBLastTwo":pblast2,
+            //Section 3
+            "BoxThree": box3,
+            "NoRequestedCopiesThree": cop3,
+            "BirthCityThree": childcity3,
+            "BirthStateThree": childstate3,
+            "CountyThree": childcounty3,
+            "DateBirth/YearsThree":childdob3,
+            "ChildParentAFirstnameThree":pafirst3,
+            "ChildParentAMiddleThree":pamiddle3,
+            "ChildParentALastThree":palast3,
+            "ChildParentBFirstnameThree":pbfirst3,
+            "ChildParentBMiddleThree":pbmiddle3,
+            "ChildParentLastThree":pblast3,
+          }
+        ]
+      };
+      fileName = "my-download.json";
+      saveData(data, fileName);
+    }
+                           );
+  </script>
+  <script>
+    document.getElementById('yourBox').onchange = function() {
+      document.getElementById('cfname').disabled = !this.checked;
+      document.getElementById('cmname').disabled = !this.checked;
+      document.getElementById('clname').disabled = !this.checked;
+      document.getElementById('copies').disabled = !this.checked;
+      document.getElementById('ccity').disabled = !this.checked;
+      document.getElementById('cstate').disabled = !this.checked;
+      document.getElementById('ccounty').disabled = !this.checked;
+      document.getElementById('dob').disabled = !this.checked;
+      document.getElementById('pafname').disabled = !this.checked;
+      document.getElementById('pamname').disabled = !this.checked;
+      document.getElementById('palname').disabled = !this.checked;
+      document.getElementById('pafname').disabled = !this.checked;
+      document.getElementById('pbfname').disabled = !this.checked;
+      document.getElementById('pbmname').disabled = !this.checked;
+      document.getElementById('pblname').disabled = !this.checked;
+      document.getElementById('newname').disabled = !this.checked;
+      document.getElementById('dchanged').disabled = !this.checked;
+    };
+  </script>
+  <script>
+    document.getElementById('yourBox2').onchange = function() {
+      document.getElementById('cfname2').disabled = !this.checked;
+      document.getElementById('cmname2').disabled = !this.checked;
+      document.getElementById('clname2').disabled = !this.checked;
+      document.getElementById('copies2').disabled = !this.checked;
+      document.getElementById('ccity2').disabled = !this.checked;
+      document.getElementById('cstate2').disabled = !this.checked;
+      document.getElementById('ccounty2').disabled = !this.checked;
+      document.getElementById('dod').disabled = !this.checked;
+      document.getElementById('pafname2').disabled = !this.checked;
+      document.getElementById('pamname2').disabled = !this.checked;
+      document.getElementById('palname2').disabled = !this.checked;
+      document.getElementById('pafname2').disabled = !this.checked;
+      document.getElementById('pbfname2').disabled = !this.checked;
+      document.getElementById('pbmname2').disabled = !this.checked;
+      document.getElementById('pblname2').disabled = !this.checked;
+    };
+  </script>
+  <script>
+    document.getElementById('yourBox3').onchange = function() {
+      document.getElementById('copies3').disabled = !this.checked;
+      document.getElementById('ccity3').disabled = !this.checked;
+      document.getElementById('cstate3').disabled = !this.checked;
+      document.getElementById('ccounty3').disabled = !this.checked;
+      document.getElementById('doe').disabled = !this.checked;
+      document.getElementById('pafname3').disabled = !this.checked;
+      document.getElementById('pamname3').disabled = !this.checked;
+      document.getElementById('palname3').disabled = !this.checked;
+      document.getElementById('pafname3').disabled = !this.checked;
+      document.getElementById('pbfname3').disabled = !this.checked;
+      document.getElementById('pbmname3').disabled = !this.checked;
+      document.getElementById('pblname3').disabled = !this.checked;
+    };
+  </script>
+</body>
+</html>
